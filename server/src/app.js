@@ -11,6 +11,7 @@ app.use(morgan('combined'))
 
 app.use(express.static(path.join(__dirname, '..', 'public')))
 app.use(planetsRouter)
+app.use(launchesRouter)
 app.get('/', (req,res) => {
     res.sendfile(path.join(__dirname, '..', 'public', 'index.html'))
 })
