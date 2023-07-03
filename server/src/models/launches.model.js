@@ -10,6 +10,9 @@ const launch = {
     success: true,
 }
 launches.set(launch.flightNumber, launch);
+function getAllLaunches() {
+    return Array.from(launches.values()); // convert map to array of objects for easier
+}
 module.exports = {
-    launches,
+    getAllLaunches,
 }
