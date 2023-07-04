@@ -1,11 +1,13 @@
 const API_URL = 'http://localhost:8000';
 async function httpGetPlanets() {
+  console.log("httpGetPlanets")
   const response = await fetch(`${API_URL}/planets`)
   return await response.json()
   // Load planets and return as JSON.
 }
 
 async function httpGetLaunches() {
+  console.log("httpGetLaunches")
   const response = await fetch(`${API_URL}/launches`)
   const fetchedLaunches =  await response.json();
   return fetchedLaunches.sort((a, b) => {
@@ -14,7 +16,7 @@ async function httpGetLaunches() {
 }
 
 async function httpSubmitLaunch(launch) {
-  console.log("first")
+  console.log("httpSubmitLaunch")
   try {
     await fetch(`${API_URL}/launches`, {
       method: 'post',
