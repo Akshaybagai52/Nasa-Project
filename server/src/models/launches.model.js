@@ -14,6 +14,9 @@ launches.set(launch.flightNumber, launch);
 function getAllLaunches() {
     return Array.from(launches.values()); // convert map to array of objects for easier
 }
+function existsLaunchWithId(launchId) {
+    return launches.has(launchId)
+}
 function addNewLaunch(launch) {
     latestFlightNumber++;
     launches.set(latestFlightNumber, Object.assign(launch, {
